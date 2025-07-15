@@ -2,8 +2,9 @@ FROM ghcr.io/browserless/chrome:latest
 
 WORKDIR /app
 
-COPY . .
+COPY package.json ./
+COPY server.js ./
 
-RUN npm install express
+RUN npm install
 
 CMD ["node", "server.js"]
