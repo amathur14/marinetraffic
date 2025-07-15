@@ -1,10 +1,9 @@
-FROM alixaxel/chrome
+FROM ghcr.io/browserless/chrome:latest
 
 WORKDIR /app
 
-# Install express only (Puppeteer is already built-in)
-RUN npm install express
-
 COPY . .
+
+RUN npm install express
 
 CMD ["node", "server.js"]
