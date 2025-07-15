@@ -1,12 +1,10 @@
-FROM ghcr.io/browserless/chrome:latest
+FROM node:18
 
 WORKDIR /app
 
 COPY package.json ./
 COPY server.js ./
 
-RUN npm install && \
-    npx puppeteer install --prefix /app
+RUN npm install
 
 CMD ["node", "server.js"]
-
